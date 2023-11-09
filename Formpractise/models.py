@@ -11,6 +11,7 @@ class Student(models.Model):
     phone_number = models.CharField(unique=True,max_length=10)
     email_address = models.EmailField(unique=True)
     dateofBirth = models.DateField()
+    application = models.ImageField(upload_to='applications',default=False)
     gender = models.BooleanField(choices=choices,default=False)
     def __str__(self):
         return self.first_name
