@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from .models import Student
 from Formpractise.forms import studentform
 
 
@@ -14,3 +14,9 @@ def home(request):
         form = studentform()
     form = studentform()
     return render(request,'home.html',{"form":form})
+def all_students(request):
+    students = Student.objects.all()
+    return render(request,'allstudents.html',{"data":students})
+def student(request, stud_id):
+    studentt = Student.objects.get(pk=stud_id)
+    return render(request,'student.html',{"student":studentt})
