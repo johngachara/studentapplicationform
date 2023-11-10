@@ -1,3 +1,4 @@
+{% load humanize %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,10 +23,10 @@
     {% for i in data %}
       <tbody>
       <th scope="row">{{ i.id }}</th>
-        <td><a href="/student/{{ i.id }}">{{ i.first_name }}</td></a>
+        <td><a href="/student/{{ i.id }}"style="text-decoration: none">{{ i.first_name | title }}</td></a>
       <td>{{ i.last_name }}</td>
       <td>{{ i.email_address }}</td>
-          <td>{{ i.dateofBirth }}</td>
+          <td>{{ i.dateofBirth|date }}</td>
           <td>{{ i.phone_number }}</td>
           <td>{{ i.location }}</td>
     </tr>

@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Formpractise.apps.FormpractiseConfig',
-    'crispy_forms','crispy_bootstrap5'
+    'crispy_forms',
+    'crispy_bootstrap5',
+    'django.contrib.humanize'
 ]
 
 MIDDLEWARE = [

@@ -1,5 +1,12 @@
-from django.db import models
+import os.path
+import uuid
 
+from django.db import models
+def unique_img(instance,filename):
+    image = uuid.uuid4()
+    ext = filename.split(".")[-1]
+    img = f"{image}.{ext}"
+    return os.path.join('applications',img)
 # Create your models here.
 class Student(models.Model):
     choices = ((False,'Male'),(False,'Female'),(False,'Other'))
@@ -11,7 +18,8 @@ class Student(models.Model):
     phone_number = models.CharField(unique=True,max_length=10)
     email_address = models.EmailField(unique=True)
     dateofBirth = models.DateField()
-    application = models.ImageField(upload_to='applications',default=False)
+    application = models.ImageField(upload_to=unique_img,default=False)
     gender = models.BooleanField(choices=choices,default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
     def __str__(self):
         return self.first_name
