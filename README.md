@@ -1,5 +1,5 @@
 # studentapplicationform
-This is a simple student application form built in django that a student can fill their details and when submitted if the data is valid is sent to a simple sqlite database.You cannot view the database since i am the django administrator but you can configure your database in the settings.py file.
+This is a simple student application form built in django that a student can fill their details and when submitted if the data is valid is sent to a simple sqlite database.It  allows you to view in another page the applicants with their details and y also view each applicant's details.
 To run the application:
 1.Clone this repository
 2.Apply migrations to create database tables
