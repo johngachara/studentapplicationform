@@ -4,4 +4,5 @@ To run the application:
 1.Clone this repository
 2.Apply migrations to create database tables
 3. Run the development server and view the form
-4. To add some dummy data run the command python3(on mac/linux) / python(on windows) manage.py populate.
+4. To add some dummy data run the command python3(on mac/linux) / python(on windows) manage.py populate
+5. To delete all data in database run the command python3(on mac/linux) / python(on windows) deleteall
