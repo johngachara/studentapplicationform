@@ -8,5 +8,6 @@ urlpatterns = [
     path('all/',views.all_students,name='allstudents'),
     path('student/<int:stud_id>',views.student,name='student'),
     path('delete/<int:stud_id>',views.delete,name='delete'),
-    path('student/',views.search_student,name='search')
+    path('student/',views.search_student,name='search'),
+    path('student/update/<int:employeeid>',views.update_employee,name='update')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -8,6 +8,8 @@
     <title>Details</title>
 </head>
 <body>
+{% include 'alerts.html' %}
+{% block content %}
 <div class="px-4 pt-5 my-5 text-center border-bottom">
     <h1 class="display-4 fw-bold text-body-emphasis">{{ student.first_name|title }}</h1>
     <div class="col-lg-6 mx-auto">
@@ -19,10 +21,12 @@
         <a href="{% url 'home' %}" type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Apply</a>
         <a href="{% url 'allstudents' %}" type="button" class="btn btn-outline-secondary btn-lg px-4">Applicants</a>
       </div><a href="{% url 'delete' student.id %}" class="btn btn-danger rounded-pill px-3" type="button">Delete</a>
+        <a href="{% url 'update' student.id %}" class="btn btn-danger rounded-pill px-3" type="button">Update</a>
     </div>
       <div class="container px-5">
         <img src="{{ student.application.url }}" class="img-fluid border rounded-3 shadow-lg mb-4" width="700" height="500" loading="lazy">
       </div>
     </div>
+{% endblock %}
 </body>
 </html>
